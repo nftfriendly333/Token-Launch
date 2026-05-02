@@ -359,8 +359,8 @@
       </div>
       <div class="param-group">
         <div class="param-label">SINGLE-SIDE INJECTION</div>
-        <input type="range" id="injectEth" min="0" max="30" step="5" value="10">
-        <div class="param-readout"><span id="injectEthVal">1.0</span> ETH at T+6</div>
+        <input type="range" id="injectEth" min="0" max="60" step="1" value="20">
+        <div class="param-readout"><span id="injectEthVal">1.00</span> ETH at T+6</div>
       </div>
       <div class="param-group">
         <div class="param-label">INJECTION TIME (MIN)</div>
@@ -926,7 +926,7 @@ const sliders = {
   dumpCount: { el: 'dumpCount', val: 'dumpCountVal', transform: v => parseInt(v), display: v => v },
   lpCount: { el: 'lpCount', val: 'lpCountVal', transform: v => parseInt(v), display: v => v },
   initialEth: { el: 'initialEth', val: 'initialEthVal', transform: v => v / 10, display: v => (v / 10).toFixed(1) },
-  injectEth: { el: 'injectEth', val: 'injectEthVal', transform: v => v / 10, display: v => (v / 10).toFixed(1) },
+  injectEth: { el: 'injectEth', val: 'injectEthVal', transform: v => v / 20, display: v => (v / 20).toFixed(2) },
   injectTime: { el: 'injectTime', val: 'injectTimeVal', transform: v => parseInt(v) * 60, display: v => v }
 };
 
@@ -957,28 +957,28 @@ document.getElementById('resetParamsBtn').addEventListener('click', () => {
   setSliderValues({
     earlyBuy: 63, steadyBuy: 58, volMult: 150, whaleProb: 5,
     burstMult: 150, dumpCount: 4, lpCount: 3,
-    initialEth: 20, injectEth: 10, injectTime: 6
+    initialEth: 20, injectEth: 20, injectTime: 6
   });
 });
 document.getElementById('presetQuiet').addEventListener('click', () => {
   setSliderValues({
     earlyBuy: 58, steadyBuy: 53, volMult: 100, whaleProb: 3,
     burstMult: 100, dumpCount: 4, lpCount: 2,
-    initialEth: 20, injectEth: 10, injectTime: 6
+    initialEth: 20, injectEth: 20, injectTime: 6
   });
 });
 document.getElementById('presetEngaged').addEventListener('click', () => {
   setSliderValues({
     earlyBuy: 63, steadyBuy: 58, volMult: 150, whaleProb: 5,
     burstMult: 150, dumpCount: 4, lpCount: 3,
-    initialEth: 20, injectEth: 10, injectTime: 6
+    initialEth: 20, injectEth: 20, injectTime: 6
   });
 });
 document.getElementById('presetViral').addEventListener('click', () => {
   setSliderValues({
     earlyBuy: 70, steadyBuy: 63, volMult: 250, whaleProb: 8,
     burstMult: 250, dumpCount: 4, lpCount: 5,
-    initialEth: 20, injectEth: 10, injectTime: 6
+    initialEth: 20, injectEth: 20, injectTime: 6
   });
 });
 
